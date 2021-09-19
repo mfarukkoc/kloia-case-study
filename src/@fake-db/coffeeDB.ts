@@ -1,6 +1,6 @@
 // Types
 
-export enum cofeeCategoryEnum {
+export enum coffeeCategoryEnum {
   HOT = "hot",
   ICED = "iced",
 }
@@ -9,7 +9,7 @@ export interface coffeeType {
   title: string;
   description: string;
   ingredients: string[];
-  category: `${cofeeCategoryEnum}`;
+  category: `${coffeeCategoryEnum}`;
   id: number;
 }
 
@@ -248,7 +248,7 @@ const isCoffeeContainsKeyword = (
 
 export const getCofees = (
   searchKeyword?: string,
-  category?: cofeeCategoryEnum,
+  category?: coffeeCategoryEnum,
 ): coffeeType[] => {
   const coffeesStorage = localStorage.getItem("coffees");
 
