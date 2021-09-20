@@ -29,7 +29,7 @@ It is a case study at the end of the `kloia React Bootcamp`.
 Requirements
 
 - `node v14.17.3`
-- `npm 6.14.10` or ``yarn 1.22.11`
+- `npm 6.14.10` or `yarn 1.22.11`
 
 Install required packages by
 
