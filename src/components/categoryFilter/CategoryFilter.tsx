@@ -33,6 +33,7 @@ const CategoryFilter = ({ categories }: CategoryFilterProps) => {
     <CategoryFilterList>
       {categories.map((category) => (
         <CategoryFilterItem
+          key={`category-${category.itemKey}`}
           description={category.description}
           itemKey={category.itemKey}
           isActive={activeCategory === category.itemKey}
