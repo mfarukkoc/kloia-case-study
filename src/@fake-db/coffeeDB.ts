@@ -243,7 +243,7 @@ const isCoffeeContainsKeyword = (
 
 //  DB functions
 
-export const getCofees = (
+export const getCoffees = (
   searchKeyword?: string,
   category?: coffeeCategory,
 ): coffeeType[] => {
