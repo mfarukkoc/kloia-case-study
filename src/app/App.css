@@ -1,1 +1,13 @@
 @import-normalize;
+
+@font-face {
+  font-family: "ExoBold";
+  font-weight: 700;
+  src: url("../assets/fonts/exo-bold.woff2");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 400;
+  src: url("../assets/fonts/roboto-regular.woff2");
+}
