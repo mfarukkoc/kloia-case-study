@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { lazy, Suspense } from "react";
+import { memo, lazy, Suspense } from "react";
 import { coffeeType } from "../../@fake-db/coffeeDB";
 
 const CoffeeItem = lazy(() => import("../coffeeItem/CoffeeItem"));
@@ -21,7 +21,7 @@ export interface CoffeeListProps {
   coffees: coffeeType[];
 }
 
-const CoffeeList = ({ coffees }: CoffeeListProps) => {
+const CoffeeList = memo(({ coffees }: CoffeeListProps) => {
   return (
     <StyledList>
       {Array.isArray(coffees) && coffees.length ? (
@@ -41,6 +41,6 @@ const CoffeeList = ({ coffees }: CoffeeListProps) => {
       )}
     </StyledList>
   );
-};
+});
 
 export default CoffeeList;
