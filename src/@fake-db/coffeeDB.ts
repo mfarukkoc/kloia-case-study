@@ -1,6 +1,6 @@
 // Types
 
-export type coffeeCategory = "hot" | "iced";
+export type coffeeCategory = "all" | "hot" | "iced";
 
 export interface coffeeType {
   title: string;
@@ -11,13 +11,13 @@ export interface coffeeType {
 }
 
 export interface coffeeDBType {
-  cofees: coffeeType[];
+  coffees: coffeeType[];
 }
 
 // DB object
 
 const coffeeDB: coffeeDBType = {
-  cofees: [
+  coffees: [
     {
       title: "Black",
       description:
@@ -252,7 +252,7 @@ export const getCoffees = (
   if (coffeesStorage) {
     let coffees: coffeeType[] = JSON.parse(coffeesStorage);
 
-    if (category) {
+    if (category && category !== "all") {
       coffees = coffees.filter((coffee) => coffee.category === category);
     }
 

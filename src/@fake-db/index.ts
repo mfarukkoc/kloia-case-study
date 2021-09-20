@@ -1,7 +1,7 @@
 import coffeeDB from "./coffeeDB";
 
 const initDB = () => {
-  localStorage.setItem("coffees", JSON.stringify(coffeeDB.cofees));
+  localStorage.setItem("coffees", JSON.stringify(coffeeDB.coffees));
 };
 
 initDB();
