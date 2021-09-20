@@ -1,6 +1,8 @@
 import styled from "styled-components";
+import { lazy, Suspense } from "react";
 import { coffeeType } from "../../@fake-db/coffeeDB";
-import CoffeeItem from "../coffeeItem/CoffeeItem";
+
+const CoffeeItem = lazy(() => import("../coffeeItem/CoffeeItem"));
 
 const StyledList = styled.ul`
   list-style: none;
@@ -24,13 +26,15 @@ const CoffeeList = ({ coffees }: CoffeeListProps) => {
     <StyledList>
       {Array.isArray(coffees) && coffees.length ? (
         coffees.map((coffee) => (
-          <CoffeeItem
-            id={coffee.id}
-            title={coffee.title}
-            description={coffee.description}
-            ingredients={coffee.ingredients}
-            category={coffee.category}
-          />
+          <Suspense fallback={<div>Coffee loading...</div>}>
+            <CoffeeItem
+              id={coffee.id}
+              title={coffee.title}
+              description={coffee.description}
+              ingredients={coffee.ingredients}
+              category={coffee.category}
+            />
+          </Suspense>
         ))
       ) : (
         <ErrorMessageWrapper>No coffee found..</ErrorMessageWrapper>
