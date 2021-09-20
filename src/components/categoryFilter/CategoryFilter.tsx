@@ -7,28 +7,22 @@ import {
   setCategoryFilter,
 } from "../../redux/coffee/coffeeSlice";
 import { RootState } from "../../app/rootReducer";
+import { coffeeCategory } from "../../@fake-db/coffeeDB";
 
 const CategoryFilterList = styled.ul`
   list-style: none;
   padding-left: 0;
 `;
 
-const categoryArray = [
-  {
-    description: "All Coffees",
-    itemKey: "all",
-  },
-  {
-    description: "Hot",
-    itemKey: "hot",
-  },
-  {
-    description: "Iced",
-    itemKey: "iced",
-  },
-];
+export interface CategoryType {
+  description: string;
+  itemKey: coffeeCategory;
+}
+export interface CategoryFilterProps {
+  categories: CategoryType[];
+}
 
-const CategoryFilter = () => {
+const CategoryFilter = ({ categories }: CategoryFilterProps) => {
   const dispatch = useDispatch();
 
   const activeCategory = useSelector(
@@ -37,7 +31,7 @@ const CategoryFilter = () => {
 
   return (
     <CategoryFilterList>
-      {categoryArray.map((category) => (
+      {categories.map((category) => (
         <CategoryFilterItem
           description={category.description}
           itemKey={category.itemKey}
