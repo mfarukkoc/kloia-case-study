@@ -1,3 +1,4 @@
+import { memo } from "react";
 import styled from "styled-components";
 
 const Ingredients = styled.p`
@@ -9,8 +10,10 @@ export interface CoffeeItemIngredientsProps {
   ingredients: string[];
 }
 
-const CoffeeItemIngredients = ({ ingredients }: CoffeeItemIngredientsProps) => {
-  return <Ingredients>Ingredients: {ingredients.join(", ")}</Ingredients>;
-};
+const CoffeeItemIngredients = memo(
+  ({ ingredients }: CoffeeItemIngredientsProps) => {
+    return <Ingredients>Ingredients: {ingredients.join(", ")}</Ingredients>;
+  },
+);
 
 export default CoffeeItemIngredients;

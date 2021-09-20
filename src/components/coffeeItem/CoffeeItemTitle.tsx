@@ -1,3 +1,4 @@
+import { memo } from "react";
 import styled from "styled-components";
 
 const Title = styled.h3`
@@ -8,8 +9,8 @@ export interface CoffeeItemTitleProps {
   title: string;
 }
 
-const CoffeeItemTitle = ({ title }: CoffeeItemTitleProps) => {
+const CoffeeItemTitle = memo(({ title }: CoffeeItemTitleProps) => {
   return <Title>{title}</Title>;
-};
+});
 
 export default CoffeeItemTitle;
