@@ -1,5 +1,12 @@
 @import-normalize;
-
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 @font-face {
   font-family: "ExoBold";
   font-weight: 700;
