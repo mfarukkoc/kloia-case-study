@@ -6,6 +6,7 @@ import App from "./app/App";
 import reportWebVitals from "./reportWebVitals";
 
 import store from "./app/store";
+import "./@fake-db";
 
 ReactDOM.render(
   <React.StrictMode>
