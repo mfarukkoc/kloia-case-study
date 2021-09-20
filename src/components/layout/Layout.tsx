@@ -33,7 +33,7 @@ export const Aside = styled.aside`
   padding: 20px;
   @media (max-width: ${screenWidths.mobile}) {
     position: static;
-    width: 70%;
+    width: 90%;
     margin-inline: auto;
   }
 `;
